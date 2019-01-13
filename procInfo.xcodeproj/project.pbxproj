@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		066A692321EB35BE0045FB61 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 066A692221EB35BE0045FB61 /* AppDelegate.m */; };
+		066A692621EB35BE0045FB61 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 066A692521EB35BE0045FB61 /* main.m */; };
+		066A692921EB35BE0045FB61 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 066A692821EB35BE0045FB61 /* ViewController.m */; };
+		066A692B21EB35BE0045FB61 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 066A692A21EB35BE0045FB61 /* Assets.xcassets */; };
+		066A692E21EB35BE0045FB61 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 066A692C21EB35BE0045FB61 /* Main.storyboard */; };
+		066A693821EB3EBD0045FB61 /* Binary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A9211F35A04B000EA15D /* Binary.m */; };
+		066A693921EB3EBD0045FB61 /* Process.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A9221F35A04B000EA15D /* Process.m */; };
+		066A693A21EB3EBD0045FB61 /* ProcessMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A91F1F35A04B000EA15D /* ProcessMonitor.m */; };
+		066A693B21EB3EBD0045FB61 /* Signing.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A9271F35A04B000EA15D /* Signing.m */; };
+		066A693C21EB3EBD0045FB61 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A9241F35A04B000EA15D /* Utilities.m */; };
+		066A693E21EB3F000045FB61 /* libbsm.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 066A693D21EB3F000045FB61 /* libbsm.tbd */; };
 		7DD0A92D1F35A04B000EA15D /* ProcessMonitor.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A91F1F35A04B000EA15D /* ProcessMonitor.m */; };
 		7DD0A92F1F35A04B000EA15D /* Binary.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A9211F35A04B000EA15D /* Binary.m */; };
 		7DD0A9301F35A04B000EA15D /* Process.m in Sources */ = {isa = PBXBuildFile; fileRef = 7DD0A9221F35A04B000EA15D /* Process.m */; };
@@ -19,6 +30,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		066A691F21EB35BE0045FB61 /* procInfoExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = procInfoExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		066A692121EB35BE0045FB61 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		066A692221EB35BE0045FB61 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		066A692521EB35BE0045FB61 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		066A692721EB35BE0045FB61 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		066A692821EB35BE0045FB61 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		066A692A21EB35BE0045FB61 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		066A692D21EB35BE0045FB61 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		066A692F21EB35BE0045FB61 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		066A693621EB3EAF0045FB61 /* libproc.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libproc.tbd; path = usr/lib/libproc.tbd; sourceTree = SDKROOT; };
+		066A693D21EB3F000045FB61 /* libbsm.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbsm.tbd; path = usr/lib/libbsm.tbd; sourceTree = SDKROOT; };
 		7D6E87761F3BD0FA00D6BD7C /* libprocInfo.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libprocInfo.a; path = lib/libprocInfo.a; sourceTree = SOURCE_ROOT; };
 		7DD0A91F1F35A04B000EA15D /* ProcessMonitor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ProcessMonitor.m; path = procInfo/ProcessMonitor.m; sourceTree = SOURCE_ROOT; };
 		7DD0A9211F35A04B000EA15D /* Binary.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Binary.m; path = procInfo/Binary.m; sourceTree = SOURCE_ROOT; };
@@ -32,6 +54,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		066A691C21EB35BE0045FB61 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066A693E21EB3F000045FB61 /* libbsm.tbd in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D83A9E11EB6465D001506F0 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -42,6 +72,56 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		066A692021EB35BE0045FB61 /* procInfoExample */ = {
+			isa = PBXGroup;
+			children = (
+				066A692121EB35BE0045FB61 /* AppDelegate.h */,
+				066A692221EB35BE0045FB61 /* AppDelegate.m */,
+				066A692721EB35BE0045FB61 /* ViewController.h */,
+				066A692821EB35BE0045FB61 /* ViewController.m */,
+				066A692A21EB35BE0045FB61 /* Assets.xcassets */,
+				066A692C21EB35BE0045FB61 /* Main.storyboard */,
+				066A692F21EB35BE0045FB61 /* Info.plist */,
+				066A693421EB36620045FB61 /* Products */,
+				066A692421EB35BE0045FB61 /* Supporting Files */,
+			);
+			path = procInfoExample;
+			sourceTree = "<group>";
+		};
+		066A692421EB35BE0045FB61 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				066A692521EB35BE0045FB61 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		066A693321EB36490045FB61 /* procInfo */ = {
+			isa = PBXGroup;
+			children = (
+				7D83A9E61EB6465D001506F0 /* src */,
+				7D6E87751F3BD0C200D6BD7C /* lib */,
+			);
+			name = procInfo;
+			sourceTree = "<group>";
+		};
+		066A693421EB36620045FB61 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				066A691F21EB35BE0045FB61 /* procInfoExample.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		066A693521EB3EAF0045FB61 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				066A693D21EB3F000045FB61 /* libbsm.tbd */,
+				066A693621EB3EAF0045FB61 /* libproc.tbd */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		7D6E87751F3BD0C200D6BD7C /* lib */ = {
 			isa = PBXGroup;
 			children = (
@@ -55,8 +135,9 @@
 		7D83A9DB1EB6465D001506F0 = {
 			isa = PBXGroup;
 			children = (
-				7D83A9E61EB6465D001506F0 /* src */,
-				7D6E87751F3BD0C200D6BD7C /* lib */,
+				066A693321EB36490045FB61 /* procInfo */,
+				066A692021EB35BE0045FB61 /* procInfoExample */,
+				066A693521EB3EAF0045FB61 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -93,6 +174,23 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		066A691E21EB35BE0045FB61 /* procInfoExample */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 066A693021EB35BE0045FB61 /* Build configuration list for PBXNativeTarget "procInfoExample" */;
+			buildPhases = (
+				066A691B21EB35BE0045FB61 /* Sources */,
+				066A691C21EB35BE0045FB61 /* Frameworks */,
+				066A691D21EB35BE0045FB61 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = procInfoExample;
+			productName = procInfoExample;
+			productReference = 066A691F21EB35BE0045FB61 /* procInfoExample.app */;
+			productType = "com.apple.product-type.application";
+		};
 		7D83A9E31EB6465D001506F0 /* procInfo */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 7D83A9ED1EB6465D001506F0 /* Build configuration list for PBXNativeTarget "procInfo" */;
@@ -119,6 +217,10 @@
 				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "Objective-See";
 				TargetAttributes = {
+					066A691E21EB35BE0045FB61 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
 					7D83A9E31EB6465D001506F0 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = VBG97UB4TA;
@@ -132,6 +234,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 7D83A9DB1EB6465D001506F0;
 			productRefGroup = 7D83A9DB1EB6465D001506F0;
@@ -139,9 +242,22 @@
 			projectRoot = "";
 			targets = (
 				7D83A9E31EB6465D001506F0 /* procInfo */,
+				066A691E21EB35BE0045FB61 /* procInfoExample */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		066A691D21EB35BE0045FB61 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066A692B21EB35BE0045FB61 /* Assets.xcassets in Resources */,
+				066A692E21EB35BE0045FB61 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
 		7D6E875B1F38186300D6BD7C /* ShellScript */ = {
@@ -160,6 +276,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		066A691B21EB35BE0045FB61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				066A693821EB3EBD0045FB61 /* Binary.m in Sources */,
+				066A693921EB3EBD0045FB61 /* Process.m in Sources */,
+				066A693A21EB3EBD0045FB61 /* ProcessMonitor.m in Sources */,
+				066A693B21EB3EBD0045FB61 /* Signing.m in Sources */,
+				066A693C21EB3EBD0045FB61 /* Utilities.m in Sources */,
+				066A692921EB35BE0045FB61 /* ViewController.m in Sources */,
+				066A692621EB35BE0045FB61 /* main.m in Sources */,
+				066A692321EB35BE0045FB61 /* AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		7D83A9E01EB6465D001506F0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -174,7 +305,44 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXVariantGroup section */
+		066A692C21EB35BE0045FB61 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				066A692D21EB35BE0045FB61 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
+		066A693121EB35BE0045FB61 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = procInfoExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = NoCompany.procInfoExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		066A693221EB35BE0045FB61 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = procInfoExample/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_BUNDLE_IDENTIFIER = NoCompany.procInfoExample;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		7D83A9EB1EB6465D001506F0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -309,6 +477,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		066A693021EB35BE0045FB61 /* Build configuration list for PBXNativeTarget "procInfoExample" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				066A693121EB35BE0045FB61 /* Debug */,
+				066A693221EB35BE0045FB61 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		7D83A9DF1EB6465D001506F0 /* Build configuration list for PBXProject "procInfo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

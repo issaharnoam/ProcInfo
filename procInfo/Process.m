@@ -515,6 +515,28 @@ bail:
     return;
 }
 
+//generate signing info
+// also classifies if Apple/from App Store/etc.
+-(void)generateSigningInfoByPath:(SecCSFlags)flags
+{
+    //extract signing info dynamically
+    self.signingInfo = extractSigningInfo(self.pid, self.path, flags);
+    
+    //failed?
+    // try extract signing info statically
+    if(nil == self.signingInfo)
+    {
+        //add 'all archs' / 'nested'
+        // cuz don't know which is/was running
+        flags |= kSecCSCheckAllArchitectures | kSecCSCheckNestedCode | kSecCSDoNotValidateResources;
+        
+        //extract signing info statically
+        self.signingInfo = extractSigningInfo(0, self.binary.path, flags);
+    }
+    
+    return;
+}
+
 //for pretty printing
 -(NSString *)description
 {

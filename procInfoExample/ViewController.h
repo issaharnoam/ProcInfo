@@ -8,8 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface ViewController : NSViewController
 
+@interface ViewController : NSViewController<NSTableViewDelegate, NSTableViewDataSource>
+
+@property (nonatomic, strong) IBOutlet NSTableView *processesTblView;
+- (IBAction)onProcessesTableView:(NSTableView *)sender;
 
 @end
 
