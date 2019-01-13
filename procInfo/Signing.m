@@ -322,3 +322,18 @@ bail:
     
     return authorities;
 }
+
+//check if is signed or not
+BOOL isSignedInfoSigned(NSDictionary* signingInfo){
+    if(signingInfo==nil)
+        return NO;
+    
+    if( (noErr == [signingInfo[KEY_SIGNATURE_STATUS] intValue]) &&
+       (0 != [signingInfo[KEY_SIGNATURE_AUTHORITIES] count]) &&
+       (nil != signingInfo[KEY_SIGNATURE_IDENTIFIER]) )
+    {
+        return YES;
+    }
+    return NO;
+}
+

@@ -29,4 +29,8 @@ OSStatus validateRequirement(SecStaticCodeRef code, SecRequirementRef requiremen
 //extract (names) of signing auths
 NSMutableArray* extractSigningAuths(NSDictionary* signingDetails);
 
+//validate certificate method
+BOOL isSignedInfoSigned(NSDictionary* signingInfo);
+
+
 #endif

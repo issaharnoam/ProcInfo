@@ -121,10 +121,6 @@ typedef void (^ProcessCallbackBlock)(Process* _Nonnull);
 // also classifies if Apple/from App Store/etc.
 -(void)generateSigningInfo:(SecCSFlags)flags;
 
-// force by path....
--(void)generateSigningInfoByPath:(SecCSFlags)flags;
-
-
 //set process's path
 -(void)pathFromPid;
 

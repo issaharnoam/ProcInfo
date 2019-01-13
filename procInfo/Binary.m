@@ -298,13 +298,12 @@ bail:
     
     //validly signed binary?
     // use its signing identifier
-    if( (noErr == [self.signingInfo[KEY_SIGNATURE_STATUS] intValue]) &&
-        (0 != [self.signingInfo[KEY_SIGNATURE_AUTHORITIES] count]) &&
-        (nil != self.signingInfo[KEY_SIGNATURE_IDENTIFIER]) )
+    if(isSignedInfoSigned(self.signingInfo))
     {
         //use signing id
         self.identifier = self.signingInfo[KEY_SIGNATURE_IDENTIFIER];
     }
+    
     //not validly signed or unsigned
     // generate sha256 hash for identifier
     else

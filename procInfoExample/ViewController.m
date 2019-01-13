@@ -89,7 +89,7 @@
 {
     Process* proc = _runningProcesses.allValues[row];
     if(proc!=nil){
-        [proc generateSigningInfoByPath:kSecCSDefaultFlags];
+        [proc generateSigningInfo:kSecCSDefaultFlags];
     }
     return YES;
 }
