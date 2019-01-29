@@ -3,6 +3,9 @@ Proc Info is a open-source, user-mode, library for macOS. It provides simple int
 
 Love this library or want to support it? Check out my [patreon page](https://www.patreon.com/objective_see) :)
 
+# ProcInfoExample
+This is going to be like activity monitor application based on ProcInfo toolkit. Created for debugging and exampling purposes. To be renamed in future
+
 ##### Quick Start (tl;dr)
 
 To use the Proc Info library: 
