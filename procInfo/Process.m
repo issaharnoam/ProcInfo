@@ -21,7 +21,7 @@
 @synthesize arguments;
 @synthesize timestamp;
 @synthesize signingInfo;
-
+@synthesize starttime;
 //init
 -(id)init
 {
@@ -40,6 +40,9 @@
         
         //set start time
         timestamp = [NSDate date];
+        
+        //set start time
+        starttime = [NSDate date];
         
         //init pid
         self.pid = -1;
@@ -91,6 +94,9 @@
         //set user
         [self getUser];
         
+        //update additional data
+        [self getOthers];
+        
         //enum ancestors
         [self enumerateAncestors];
     
@@ -101,6 +107,44 @@
 bail:
     
     return self;
+}
+
+//other data
+-(void) getOthers
+{
+    
+    //kinfo_proc struct
+    struct kinfo_proc processStruct = {0};
+    
+    //size
+    size_t procBufferSize = 0;
+    
+    //mib
+    const u_int mibLength = 4;
+    
+    //syscall result
+    int sysctlResult = -1;
+    
+    //init buffer length
+    procBufferSize = sizeof(processStruct);
+    
+    //init mib
+    int mib[mibLength] = {CTL_KERN, KERN_PROC, KERN_PROC_PID, self.pid};
+    
+    //make syscall
+    sysctlResult = sysctl(mib, mibLength, &processStruct, &procBufferSize, NULL, 0);
+    
+    //check if got ppid
+    if( (noErr == sysctlResult) &&
+       (0 != procBufferSize) )
+    {
+        //read values we need
+        uint64_t millis = (processStruct.kp_proc.p_starttime.tv_sec * (uint64_t)1000) + (processStruct.kp_proc.p_starttime.tv_usec / 1000);
+        self.starttime = [NSDate dateWithTimeIntervalSince1970:millis/1000.0];
+    }
+    
+    return;
+
 }
 
 //get uid

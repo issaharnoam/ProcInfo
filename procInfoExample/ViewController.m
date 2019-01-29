@@ -57,7 +57,7 @@
             {
                 [self->_runningProcesses removeObjectForKey:[NSNumber numberWithInt:process.pid]];
             }
-            _sortedProcessesArray = _runningProcesses.allValues.mutableCopy;
+            self->_sortedProcessesArray = _runningProcesses.allValues.mutableCopy;
             [self->_processesTblView reloadData];
         };
         
@@ -88,6 +88,10 @@
     }
     else if ([tableColumn.identifier isEqualToString:@"path"]) {
         cellView.textField.stringValue = process.path;
+    }
+    else if ([tableColumn.identifier isEqualToString:@"starttime"]) {
+            cellView.textField.stringValue = [NSDateFormatter localizedStringFromDate:process.starttime                                       dateStyle:NSDateFormatterShortStyle
+                                       timeStyle:NSDateFormatterFullStyle];
     }
     
     return cellView;

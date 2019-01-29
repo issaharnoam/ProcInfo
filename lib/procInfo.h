@@ -111,6 +111,9 @@ typedef void (^ProcessCallbackBlock)(Process* _Nonnull);
 //timestamp
 @property(nonatomic, retain)NSDate* _Nonnull timestamp;
 
+//starttime
+@property(nonatomic, retain)NSDate* _Nonnull starttime;
+
 /* METHODS */
 
 //init with a pid
@@ -130,6 +133,8 @@ typedef void (^ProcessCallbackBlock)(Process* _Nonnull);
 //class method
 // get's parent of arbitrary process
 +(pid_t)getParentID:(pid_t)child;
+
+-(void) getOthers;
 
 @end
 
