@@ -13,6 +13,7 @@
 @interface ViewController ()
 
 @property (atomic, strong) NSMutableDictionary* runningProcesses;
+@property (atomic, strong) NSMutableArray* sortedProcessesArray;
 
 @end
 
@@ -24,8 +25,12 @@
 
     [self.processesTblView setDelegate:self];
     [self.processesTblView setDataSource:self];
+    [self.processesTblView setSortDescriptors:[NSArray arrayWithObjects:
+                                      [NSSortDescriptor sortDescriptorWithKey:@"pid" ascending:YES selector:@selector(compare:)],
+                                      nil]];
     
     _runningProcesses = [NSMutableDictionary dictionary];
+    _sortedProcessesArray = [NSMutableArray array];
     
     //init proc info object
     // YES: skip (CPU-intensive) generation of code-signing info
@@ -43,17 +48,29 @@
     //block for process events
     ProcessCallbackBlock block = ^(Process* process)
     {
-        if(process.type != EVENT_EXIT)
+        dispatch_block_t blockMain = ^ (){
+            if(process.type != EVENT_EXIT)
+            {
+                [self->_runningProcesses setObject:process forKey:[NSNumber numberWithInt: process.pid]];
+            }
+            else
+            {
+                [self->_runningProcesses removeObjectForKey:[NSNumber numberWithInt:process.pid]];
+            }
+            _sortedProcessesArray = _runningProcesses.allValues.mutableCopy;
+            [self->_processesTblView reloadData];
+        };
+        
+        if ([NSThread isMainThread])
         {
-            [self->_runningProcesses setObject:process forKey:[NSNumber numberWithInt: process.pid]];
+            blockMain();
         }
         else
         {
-            [self->_runningProcesses removeObjectForKey:[NSNumber numberWithInt:process.pid]];
+            dispatch_sync(dispatch_get_main_queue(), blockMain);
         }
-        [self->_processesTblView reloadData];
     };
-             
+    
     //start monitoring
     // ->block will be invoke upon process events!
     [procInfo start:block];
@@ -63,7 +80,9 @@
 - (NSView*)tableView:(NSTableView *)tableView viewForTableColumn:(NSTableColumn *)tableColumn row:(NSInteger)row {
     NSTableCellView *cellView = [tableView makeViewWithIdentifier:tableColumn.identifier owner:self];
     
-    Process *process = _runningProcesses.allValues[row];
+    NSMutableArray* values = _runningProcesses.allValues.mutableCopy;
+    [values sortUsingDescriptors:@[[NSSortDescriptor sortDescriptorWithKey:@"path" ascending:YES]]];
+    Process *process = values[row];
     if ([tableColumn.identifier isEqualToString:@"pid"]) {
         cellView.textField.integerValue = process.pid;
     }
@@ -81,7 +100,7 @@
 }
  
  - (NSInteger)numberOfRowsInTableView:(NSTableView *)tableView {
-     return _runningProcesses.count;
+     return _sortedProcessesArray.count;
  }
 
 

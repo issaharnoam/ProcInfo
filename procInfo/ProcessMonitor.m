@@ -104,16 +104,16 @@ bail:
 
     //do basic (app) monitoring
     // if not root, or OS version is < 10.12.4 (due to kernel bug)
-    if( (0 != getuid()) ||
-        ([osVersionInfo[@"minorVersion"] intValue] < OS_MINOR_VERSION_SIERRA) ||
-        (([osVersionInfo[@"minorVersion"] intValue] == OS_MINOR_VERSION_SIERRA) && ([osVersionInfo[@"bugfixVersion"] intValue] < 4)) )
-    {
-        //setup app monitoring
-        [self appMonitor];
-    }
+   // if( false || (0 != getuid()) ||
+     //   ([osVersionInfo[@"minorVersion"] intValue] < OS_MINOR_VERSION_SIERRA) ||
+     //   (([osVersionInfo[@"minorVersion"] intValue] == OS_MINOR_VERSION_SIERRA) && ([osVersionInfo[@"bugfixVersion"] intValue] < 4)) )
+    //{
+    //    //setup app monitoring
+    //    [self appMonitor];
+    //}
     
     //otherwise, enable full monitoring
-    else
+    //else
     {
         //start process monitoring via openBSM to get apps & procs
         // sits in while(YES) loop, so we invoke call in a background thread
